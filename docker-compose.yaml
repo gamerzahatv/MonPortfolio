@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  react-app:
+    container_name: mine-desktop
+    image: node:20-alpine
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    working_dir: /app
+    # command: sh -c "npm install & npm run start  && sleep infinity"
+    command: sh -c "npm install & npm start & sleep infinity"
+    restart: always
+
+
